@@ -1,0 +1,23 @@
+name = "{{project-name}}"
+# type = "javascript" is required to use the `[build]` section
+type = "javascript"
+workers_dev = true
+account_id = ""
+route = ""
+zone_id = ""
+
+[build]
+command = "wasm-pack build --target web --out-dir worker/wasm"
+
+[build.upload]
+dir = "worker"
+format = "modules"
+main = "./index.mjs"
+
+[[build.upload.rules]]
+type = "ESModule"
+globs = ["**/*.mjs", "wasm/*.js"]
+
+[[build.upload.rules]]
+type = "CompiledWasm"
+globs = ["**/*.wasm"]
