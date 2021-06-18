@@ -1,7 +1,7 @@
 // Worker
 
-import wasm_init, * as wasm from "wasm/{{project-name}}.js"
-import wasm_module from "wasm/{{project-name}}_bg.wasm"
+import wasm_init, * as wasm from "wasm/rustwasm.js"
+import wasm_module from "wasm/rustwasm_bg.wasm"
 
 export default {
   async fetch(request, env) {

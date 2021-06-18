@@ -7,7 +7,7 @@ route = ""
 zone_id = ""
 
 [build]
-command = "wasm-pack build --target web --out-dir worker/wasm"
+command = "wasm-pack build --target web --out-name rustwasm --out-dir worker/wasm"
 
 [build.upload]
 dir = "worker"
